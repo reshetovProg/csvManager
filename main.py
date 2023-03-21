@@ -10,13 +10,24 @@ def main():
         print(choice)
         if choice==7:
             ui.show_data(file.read_file('data.csv'))
-            input()
-            main()
+        elif choice==2:
+            category=ui.show_category('data.csv')
+            element=input("введение значение для поиска: ")
+            list = list_function.search_in_file('data.csv', category, element)
+            ui.show_list(list)
+        elif choice==4:
+            list = ui.add_element('data.csv')
+            file.write_line('data.csv', list)
+            print("запись завершена")
+
+        input()
+        main()
+
     except Exception as ex:
         print(str(ex))
         input()
         main()
 
-print("start program")
+
 main()
 
