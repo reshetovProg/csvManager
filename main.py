@@ -17,6 +17,6 @@ def main():
         input()
         main()
 
-
+print("start program")
 main()
 
